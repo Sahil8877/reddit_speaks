@@ -7,6 +7,15 @@
 ```
 🌐 Reddit  →  👁️ Vision AI  →  💬 5-Word Caption  →  🎵 Sine Frequency  →  🎬 Video
 ```
+<div align="center">
+  
+<a href="https://www.loom.com/share/ef7ecae4574b4a779fe5ad1d6e68ba00" target="_blank">
+  <img src="output/demo.png" alt="Demo Thumbnail" style="border-radius: 12px; max-width: 100%;">
+</a>
+
+[![Watch Demo on Loom](https://img.shields.io/badge/🎬%20WATCH%20DEMO%20ON%20LOOM-%23FF4500?style=for-the-badge&logo=loom&logoColor=white)](https://www.loom.com/share/ef7ecae4574b4a779fe5ad1d6e68ba00)
+
+</div>
 
 <p>
 <img src="https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python"/>
