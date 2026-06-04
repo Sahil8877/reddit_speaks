@@ -161,7 +161,7 @@ Repeat until `30/30`. Your film lands at `assets/output/output.mp4`.
 |---|---|---|---|
 | `SUBREDDITS` | `get_topic.py` | 60+ communities | The pool the AI picks from |
 | `MAX_IMAGE_COUNT` | `main.py` | `30` | Images per video |
-| `DURATION` | `main.py` | `2` seconds | Length of each frame |
+| `DURATION` | `main.py` | `1` seconds | Length of each frame |
 | Pitch range | `get_audio_pitch.py` | 50 – 3000 Hz | Frequency ceiling/floor |
 | Caption length | `get_caption.py` | ≤ 5 words | Description brevity |
 | `retries` | `main.py` | `7` | Attempts before giving up |
