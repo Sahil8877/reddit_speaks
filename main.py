@@ -41,8 +41,8 @@ def reset_batch():
         modules.os.remove(f"{OUT_PATH}/output.mp4")
     
     # 4. Reset visited subreddits file
-    if modules.os.path.exists('Day 52 - Reddit Bot/visited.txt'):
-        modules.os.remove('Day 52 - Reddit Bot/visited.txt')
+    if modules.os.path.exists('visited.txt'):
+        modules.os.remove('visited.txt')
     
     print("🔄 Batch reset complete. All images, audio, visited.txt, and output.mp4 removed.")
 
@@ -68,7 +68,7 @@ def movie_maker(imgs_list, caption_list, audio_pitch_list):
             size=(clip.w, clip.h)
         ).with_position("center")
         corner_clip = modules.TextClip(
-            text=img_file.replace('.png', '').replace('.jpg', '').replace('/',':'),
+            text=img_file.replace('.png', '').replace('.jpg', '').replace('/','-'),
             font_size=20, color="white", stroke_width=2,
             stroke_color="black", duration=DURATION,
         ).with_position(("right", "top"))
