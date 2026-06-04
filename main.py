@@ -10,7 +10,7 @@ OUT_PATH  = 'Day 52 - Reddit Bot/output'
 for path in [IMG_PATH, AUD_PATH, OUT_PATH]:
     modules.os.makedirs(path, exist_ok=True)
 
-MAX_IMAGE_COUNT = 12
+MAX_IMAGE_COUNT = 30
 DURATION = 1
 
 def get_image_list(path):
