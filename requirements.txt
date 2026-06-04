@@ -1,0 +1,9 @@
+ollama>=0.1.0
+moviepy>=1.0.3
+numpy>=1.24.0
+requests>=2.31.0
+selenium>=4.15.0
+undetected-chromedriver>=3.5.0
+Pillow>=10.0.0           # needed by MoviePy
+imageio>=2.31.0          # needed by MoviePy
+imageio-ffmpeg>=0.4.0    # provides ffmpeg for MoviePy
