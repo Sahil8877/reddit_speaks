@@ -26,7 +26,7 @@
 <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge"/>
 </p>
 
-*12 frames · 24 seconds · 1 unique tone per image · no APIs · no cloud*
+*30 frames · 30 seconds · 1 unique tone per image · no APIs · no cloud*
 
 </div>
 
@@ -34,7 +34,7 @@
 
 ## What Is This?
 
-RedditSpeaks is a fully offline AI pipeline that watches Reddit, describes what it sees, and converts those descriptions into sound. The result is a synchronized 24sec audiovisual film where every image carries its own unique tone.
+RedditSpeaks is a fully offline AI pipeline that watches Reddit, describes what it sees, and converts those descriptions into sound. The result is a synchronized 30sec audio visual film where every image carries its own unique tone.
 
 The AI picks where to look based on the time of day : cozy subreddits at night, nature at dawn, surreal content on a late Friday. It then generates a 5 word caption per image and maps that caption to a sine-wave frequency. Twelve images. Twelve tones. One film. Entirely on your machine.
 
@@ -67,7 +67,7 @@ Each caption is mapped to a sine-wave frequency. Calm scenes hum low. Vivid, cha
 <td align="center" width="33%">
 
 ### 🎬 Synchronized Film
-12 images × 2 seconds each = a 24-second audiovisual story with frame accurate audio per scene.
+30 images × 1 seconds each = a 30sec audiovisual story with frame accurate audio per scene.
 
 </td>
 <td align="center" width="33%">
@@ -109,12 +109,12 @@ Each run of `main.py` does exactly one job and exits. This is intentional.
 3. **Vision captioning** — LLaVA 13B generates a five-word description of the image (e.g. *"foggy mountain at dawn"*).
 4. **Frequency mapping** — The caption is fed into a strict prompt with `temperature=0.0` that outputs a single integer pitch value.
 5. **Film synthesis** — MoviePy builds 2-second sine-wave clips with fade envelopes, overlays captions, and concatenates everything into a final MP4.
-6. **Batch logic** — After 12 successful runs the system automatically renders `output.mp4`. A safe reset prevents image overflow.
+6. **Batch logic** — After 30 successful runs the system automatically renders `output.mp4`. A safe reset prevents image overflow.
 
 ```
-Run 1–11  →  fetch one image  →  save  →  exit
-Run 12    →  12/12 reached   →  build captions + audio + video  →  output.mp4
-Run 13+   →  output exists   →  prompt to reset for next batch
+Run 1–30  →  fetch one image  →  save  →  exit
+Run 29    →  30/30 reached   →  build captions + audio + video  →  output.mp4
+Run 30+   →  output exists   →  prompt to reset for next batch
 ```
 
 ---
@@ -151,7 +151,7 @@ ollama pull llava:13b
 python main.py
 ```
 
-Repeat until `12/12`. Your film lands at `assets/output/output.mp4`.
+Repeat until `30/30`. Your film lands at `assets/output/output.mp4`.
 
 ---
 
@@ -160,7 +160,7 @@ Repeat until `12/12`. Your film lands at `assets/output/output.mp4`.
 | Parameter | File | Default | Description |
 |---|---|---|---|
 | `SUBREDDITS` | `get_topic.py` | 60+ communities | The pool the AI picks from |
-| `MAX_IMAGE_COUNT` | `main.py` | `12` | Images per video |
+| `MAX_IMAGE_COUNT` | `main.py` | `30` | Images per video |
 | `DURATION` | `main.py` | `2` seconds | Length of each frame |
 | Pitch range | `get_audio_pitch.py` | 50 – 3000 Hz | Frequency ceiling/floor |
 | Caption length | `get_caption.py` | ≤ 5 words | Description brevity |
@@ -222,7 +222,7 @@ redditspeaks/
 - Reddit UI changes may break Selenium selectors without notice
 - LLaVA 13B requires ~4.5 GB of local VRAM/RAM
 - Audio is purely sine-based with no harmonic complexity yet
-- Requires 12 sequential runs to produce a full video
+- Requires 30 sequential runs to produce a full video
 
 ---
 
