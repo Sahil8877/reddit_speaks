@@ -21,7 +21,7 @@ def get_post(IMG_PATH):
         img_data = modules.requests.get(image.get_attribute('src')).content
         now = modules.datetime.now()
 
-        with open(f'{IMG_PATH}/{now.strftime("%A_%B_%d_%Y_%I:%M_%p")}.png','wb') as f:
+        with open(f'{IMG_PATH}/{now.strftime("%A_%B_%d_%Y_%I/%M_%p")}.png','wb') as f:
             f.write(img_data)
 
         print("📝 Post Title : ",title.text)
