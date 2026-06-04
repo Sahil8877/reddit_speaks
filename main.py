@@ -3,9 +3,9 @@ import make_frame_audio
 import get_post, get_caption, get_audio_pitch
 from natsort import natsorted
 
-IMG_PATH = 'Day 52 - Reddit Bot/assets/images'
-AUD_PATH  = 'Day 52 - Reddit Bot/assets/audio'
-OUT_PATH  = 'Day 52 - Reddit Bot/output'
+IMG_PATH = 'assets/images'
+AUD_PATH  = 'assets/audio'
+OUT_PATH  = 'output'
 
 for path in [IMG_PATH, AUD_PATH, OUT_PATH]:
     modules.os.makedirs(path, exist_ok=True)
@@ -68,7 +68,7 @@ def movie_maker(imgs_list, caption_list, audio_pitch_list):
             size=(clip.w, clip.h)
         ).with_position("center")
         corner_clip = modules.TextClip(
-            text=img_file.replace('.png', '').replace('.jpg', ''),
+            text=img_file.replace('.png', '').replace('.jpg', '').replace('/',':'),
             font_size=20, color="white", stroke_width=2,
             stroke_color="black", duration=DURATION,
         ).with_position(("right", "top"))

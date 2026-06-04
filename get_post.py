@@ -25,12 +25,13 @@ def get_post(IMG_PATH):
             f.write(img_data)
 
         print("📝 Post Title : ",title.text)
+        driver.quit()
         return True
+    
     except Exception as e:
         print("Exception occured retrying now..")
         return False
-    finally:
-        driver.quit()
+
 
 # if not get_post():
 #     retry(get_post,"Image Attempt :")

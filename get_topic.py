@@ -28,7 +28,7 @@ def get_topic():
 
     # Load visited from file
     try:
-        with open('Day 52 - Reddit Bot/visited.txt', 'r') as f:
+        with open('visited.txt', 'r') as f:
             SUBREDDITS_CHECKED = [line.strip() for line in f if line.strip()]
     except FileNotFoundError:
         SUBREDDITS_CHECKED = []
@@ -87,7 +87,7 @@ def get_topic():
     # Append to memory and file (only if not already there, but file read ensures that)
     if response not in SUBREDDITS_CHECKED:
         SUBREDDITS_CHECKED.append(response)
-        with open('Day 52 - Reddit Bot/visited.txt', 'a') as f:
+        with open('visited.txt', 'a') as f:
             f.write(response + '\n')
 
     print("🤖 AI chose :", response)
