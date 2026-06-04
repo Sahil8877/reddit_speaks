@@ -82,14 +82,13 @@ Zero cloud dependency. Everything runs locally after the initial model download.
 
 The AI maps the emotional weight of each caption to a frequency range:
 
-| Mood | Range | Character |
-|---|---|---|
-| 🌿 Calm & still | 50 – 400 Hz | Soft, grounding hum |
-| 🌅 Neutral & scenic | 400 – 1200 Hz | Balanced, storytelling tone |
-| ⚡ Vivid & energetic | 1200 – 2500 Hz | Sharp, dynamic frequency |
+| Mood | Character |
+|---|---|
+| 🌿 Calm & still | Soft, grounding hum |
+| 🌅 Neutral & scenic | Balanced, storytelling tone |
+| ⚡ Vivid & energetic | Sharp, dynamic frequency |
 
 > The result is a short film where you **hear what images feel like**, not just see them.
-
 ---
 
 ## How It Works
