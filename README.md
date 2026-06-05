@@ -36,7 +36,7 @@
 
 RedditSpeaks is a fully offline AI pipeline that watches Reddit, describes what it sees, and converts those descriptions into sound. The result is a synchronized 30sec audio visual film where every image carries its own unique tone.
 
-The AI picks where to look based on the time of day : cozy subreddits at night, nature at dawn, surreal content on a late Friday. It then generates a 5 word caption per image and maps that caption to a sine-wave frequency. Twelve images. Twelve tones. One film. Entirely on your machine.
+The AI picks where to look based on the time of day : cozy subreddits at night, nature at dawn, surreal content on a late Friday. It then generates a 5 word caption per image and maps that caption to a sine wave frequency. 30 images. 30 tones. 1 film. Entirely on your machine.
 
 ---
 
@@ -108,13 +108,13 @@ Each run of `main.py` does exactly one job and exits. This is intentional.
 2. **Image extraction** — Selenium opens Reddit, finds the top image post, and saves it to `assets/images/`.
 3. **Vision captioning** — LLaVA 13B generates a five-word description of the image (e.g. *"foggy mountain at dawn"*).
 4. **Frequency mapping** — The caption is fed into a strict prompt with `temperature=0.0` that outputs a single integer pitch value.
-5. **Film synthesis** — MoviePy builds 2-second sine-wave clips with fade envelopes, overlays captions, and concatenates everything into a final MP4.
+5. **Film synthesis** — MoviePy builds 1sec sine wave clips with fade envelopes, overlays captions, and concatenates everything into a final MP4.
 6. **Batch logic** — After 30 successful runs the system automatically renders `output.mp4`. A safe reset prevents image overflow.
 
 ```
-Run 1–30  →  fetch one image  →  save  →  exit
-Run 29    →  30/30 reached   →  build captions + audio + video  →  output.mp4
-Run 30+   →  output exists   →  prompt to reset for next batch
+Run 1–29  →  fetch one image  →  save  →  exit
+Run 30    →  30/30 reached   →  build captions + audio + video  →  output.mp4
+Run 31+   →  output exists   →  prompt to reset for next batch
 ```
 
 ---
